@@ -7,7 +7,13 @@ public class Main {
     public static void main(String[] args) {
 
         int[]numbers={1,2,3,4,5};
+        int[]number1={2,5,1,6,4,3};
         Array arr=new Array();
+
+
+        //ترتيب المصفوفه
+        Arrays.sort(number1);
+        arr.traversal(number1);
 
 
         //طباعه عاديه
@@ -40,6 +46,21 @@ public class Main {
             System.out.println("value found at index :"+result);
         else
             System.out.println("Value not found");
+
+
+        int result1=arr.BinarySearch(number1,2 ,0,number1.length-1);
+        if(result1!=-1)
+            System.out.println("value found at index :"+result1);
+        else
+            System.out.println("Value not found");
+
+
+        int result2=arr.BinarySearch(number1,2 ,0,number1.length-1);
+        if(result2!=-1)
+            System.out.println("value found at index :"+result2);
+        else
+            System.out.println("Value not found");
+
 
 
         //داله الطباعه النهائيه
