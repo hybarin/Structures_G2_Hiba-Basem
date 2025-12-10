@@ -14,6 +14,64 @@ public class SinglyLinkedList<E>{
     }
 
 
+    // البدايه
+    public void addFirst(E data){
+        Node<E> newNode=new Node(data,head);
+        head=newNode;
+        if (isEmpty())
+            tail=head;
+        size++;
+    }
+
+    public E getFirst(){
+        if (isEmpty())
+            return null ;
+        return head.getData();
+    }
+
+    public E removeFirst(){
+        if (isEmpty())
+            return null ;
+        E delete= head.getData();
+        head=head.getNext();
+        size--;
+        if (isEmpty())
+            tail=head;
+        return delete;
+    }
+
+
+
+
+    // النهايه
+    public void addlast(E data){
+        Node<E> newNode=new Node(data,null);
+        if (isEmpty())
+            head=newNode;
+        else tail.setNext(newNode);
+        tail=newNode;
+        size++;
+    }
+
+    public E getlast(){
+        if (isEmpty())
+            return null ;
+        return tail.getData();
+    }
+
+    public E removelast(){
+        if (isEmpty())
+            return null ;
+        E delete= tail.getData();
+        head=head.getNext();
+        size--;
+        if (isEmpty())
+            tail=head;
+        return delete;
+    }
+
+
+
 
 
 
@@ -21,9 +79,9 @@ public class SinglyLinkedList<E>{
         private E data;
         private Node<E>next;
 
-        public Node(Node<E> next, E data) {
-            this.next = next;
+        public Node(E data, Node<E> next) {
             this.data = data;
+            this.next = next;
         }
 
         public E getData() {
