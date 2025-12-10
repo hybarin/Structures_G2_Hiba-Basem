@@ -43,6 +43,8 @@ public class SinglyLinkedList<E>{
 
 
 
+
+
     // النهايه
     public void addlast(E data){
         Node<E> newNode=new Node(data,null);
@@ -77,6 +79,22 @@ public class SinglyLinkedList<E>{
         }
         size--;
         return delete;
+    }
+
+
+
+
+
+    // داله الطباعه
+    public void display(){
+        if (isEmpty())
+            System.out.println("List is empty");
+        Node<E> temp= head;
+        while (temp!=null){
+            System.out.println(temp.getData()+"------>");
+            temp=temp.getNext();
+        }
+        System.out.println("null \n");
     }
 
 
