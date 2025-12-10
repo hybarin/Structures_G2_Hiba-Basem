@@ -63,10 +63,19 @@ public class SinglyLinkedList<E>{
         if (isEmpty())
             return null ;
         E delete= tail.getData();
-        head=head.getNext();
+        if (head==tail){
+            head=null;
+            tail=null;
+        }
+        else {
+          Node<E> temp=head;
+          while (temp.getNext()!=tail){
+              temp=temp.getNext();
+          }
+          temp.setNext(null);
+          tail=temp;
+        }
         size--;
-        if (isEmpty())
-            tail=head;
         return delete;
     }
 
